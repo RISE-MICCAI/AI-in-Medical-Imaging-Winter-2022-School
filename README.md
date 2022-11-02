@@ -6,7 +6,7 @@ This winter school aims to give a thorough introduction about AI in medical imag
 
 Application deadline: October 23, 2022
 
-Winter School dates: November 25 - 27 2022, 16:00 - 19:15 (Central Europe Time)
+Winter School dates: November 25 - 27, 2022, 16:00 - 19:15 (Central Europe Time)
 
 Location: wherever you are! This is a virtual event.
 
