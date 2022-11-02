@@ -1,0 +1,1 @@
+# AI-in-Medical-Imaging-Winter-2022-School
