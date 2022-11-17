@@ -1,0 +1,33 @@
+version: '3.6'
+
+volumes:
+  xnat-data:
+  postgres-db:
+
+services: 
+  xnat-postgres:
+    image: postgres:9.6
+    container_name: aai-xnat-postgres
+    environment:
+      - POSTGRES_USER=${xnat_db_username}
+      - POSTGRES_PASSWORD=${xnat_db_password}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - "postgres-db:/var/lib/postgresql/data"
+
+  xnat:
+    image: bigr/xnat:latest
+    container_name: aai-xnat
+    ports:
+      - "${xnat_port}:8080"
+      - "8104:8104"
+    environment:
+      PROJECT_NAME: "xnat"
+      XNAT_DB_USERNAME: ${xnat_db_username}
+      XNAT_DB_PASSWORD: ${xnat_db_password}
+      XNAT_HOME: /data/xnat/home
+      XNAT_DB_HOST: aai-xnat-postgres
+      XNAT_DB_NAME: xnat
+    volumes:
+      - "xnat-data:/data/xnat/"
+
